@@ -1,49 +1,54 @@
 package com.company;
 
-import java.util.Date;
+
 
 public class Course {
 
-    private String studentID;
-    private String name;
-    private Date birthdate;
+    private String courseID;
+    public static String courseName;
+    private int numberOfCredits;
 
-    public Course(String studentID, String name, Date birthdate) {
-        this.studentID = studentID;
-        this.name = name;
-        this.birthdate = birthdate;
+
+    public Course() {
+
+    }
+    public Course(String courseID, String courseName) {
+        this.courseID = courseID;
+        this.courseName = courseName;
+        this.numberOfCredits = numberOfCredits;
     }
 
-    public String getStudentID() {
-        return studentID;
+
+    public String getCourseID() {
+        return courseID;
     }
 
-    public void setStudentID(String studentID) {
-        this.studentID = studentID;
+    public void setCourseID(String courseID) {
+        this.courseID = courseID;
     }
 
-    public String getName() {
-        return name;
+    public String getcourseName() {
+        return courseName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
+    public int getNumberOfCredits() {
+        return numberOfCredits;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setNumberOfCredits(int numberOfCredits) {
+        this.numberOfCredits = numberOfCredits;
     }
 
     @Override
     public String toString() {
         return "Course{" +
-                "studentID='" + studentID + '\'' +
-                ", name='" + name + '\'' +
-                ", birthdate=" + birthdate +
+                "courseID='" + courseID + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", numberOfCredits=" + numberOfCredits +
                 '}';
     }
 }

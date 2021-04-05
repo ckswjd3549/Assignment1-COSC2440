@@ -3,13 +3,15 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class StudentEnrolment implements StudentEnrolmentManager{
+public class StudentEnrolment extends Course implements StudentEnrolmentManager{
 
+    Scanner scanner = new Scanner(System.in);
     private ArrayList<Student> studentList = new ArrayList<Student>();
     private ArrayList<Course> courseList = new ArrayList<Course>();
     private String semester;
 
-    public StudentEnrolment() {
+    public StudentEnrolment(String semester) {
+        super();
         this.studentList = studentList;
         this.courseList = courseList;
         this.semester = semester;
@@ -39,28 +41,37 @@ public class StudentEnrolment implements StudentEnrolmentManager{
         this.semester = semester;
     }
 
+
     @Override
-    public boolean addStudent() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the student you want to add: ");
-        String student = scanner.nextLine();
-        if(!studentList.contains(student)){
-            System.out.println("The student doesn't exist");
-            return false;
+    public boolean enrollStudent() {
+        System.out.println("*** Enter the Course\n >>>");
+        String courseName = scanner.nextLine();
+        System.out.println("*** Enter the Semester\n >>>");
+        String semester = scanner.nextLine();
+        System.out.println("\"*** Enter the studentID\\n >>>\"");
+        String studentID = scanner.nextLine();
+        for(int i = 0; i < courseList.size(); i++){
+            if(courseList.get(i).getcourseName() == courseName
+                    && this.semester == semester
+                    && studentList.get(i).getStudentID() == studentID){
+                System.out.println(courseList.get(i));
+            }
         }
-        else{
-            System.out.println("Enter the course you want to add: ");
-            String
-        }
+        return false;
     }
 
     @Override
-    public void updateStudent() {
+    public boolean addCourse() {
+        return false;
+    }
+
+    @Override
+    public void deleteCourse() {
 
     }
 
     @Override
-    public void deleteStudent() {
+    public void updateCourse() {
 
     }
 
@@ -68,7 +79,6 @@ public class StudentEnrolment implements StudentEnrolmentManager{
     public void getOne() {
 
     }
-
     @Override
     public void getAll() {
 

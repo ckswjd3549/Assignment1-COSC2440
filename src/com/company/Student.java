@@ -1,16 +1,15 @@
 package com.company;
 
-import java.util.Date;
-
 public class Student {
 
     private String studentID;
-    private String name;
-    private Date birthdate;
+    private String studentName;
+    private String birthdate;
 
-    public Student(String studentID, String name, Date birthdate) {
+
+    public Student(String studentID, String studentName, String birthdate) {
         this.studentID = studentID;
-        this.name = name;
+        this.studentName = studentName;
         this.birthdate = birthdate;
     }
 
@@ -22,28 +21,30 @@ public class Student {
         this.studentID = studentID;
     }
 
-    public String getName() {
-        return name;
+    public String getstudentName() {
+        return studentName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
+
+
 
     @Override
     public String toString() {
         return "Student{" +
                 "studentID='" + studentID + '\'' +
-                ", name='" + name + '\'' +
-                ", birthdate=" + birthdate +
+                ", studentName='" + studentName + '\'' +
+                ", birthdate='" + birthdate + '\'' +
                 '}';
     }
 }

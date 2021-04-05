@@ -5,9 +5,11 @@ import java.util.Scanner;
 
 public interface StudentEnrolmentManager{
 
-    public boolean addStudent();
-    public void updateStudent();
-    public void deleteStudent();
+
+    public boolean enrollStudent();
+    public boolean addCourse();
+    public void deleteCourse();
+    public void updateCourse();
     public void getOne();
     public void getAll();
 
