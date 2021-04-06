@@ -1,23 +1,19 @@
 package com.company;
 
 
+import java.util.ArrayList;
 
 public class Course {
 
     private String courseID;
-    public static String courseName;
+    private String courseName;
     private int numberOfCredits;
 
-
     public Course() {
-
-    }
-    public Course(String courseID, String courseName) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.numberOfCredits = numberOfCredits;
     }
-
 
     public String getCourseID() {
         return courseID;
@@ -27,11 +23,11 @@ public class Course {
         this.courseID = courseID;
     }
 
-    public String getcourseName() {
+    public String getCourseName() {
         return courseName;
     }
 
-    public void setName(String courseName) {
+    public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
 
@@ -42,6 +38,7 @@ public class Course {
     public void setNumberOfCredits(int numberOfCredits) {
         this.numberOfCredits = numberOfCredits;
     }
+
 
     @Override
     public String toString() {

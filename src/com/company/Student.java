@@ -1,13 +1,14 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Student {
 
     private String studentID;
     private String studentName;
     private String birthdate;
 
-
-    public Student(String studentID, String studentName, String birthdate) {
+    public Student() {
         this.studentID = studentID;
         this.studentName = studentName;
         this.birthdate = birthdate;
@@ -21,11 +22,11 @@ public class Student {
         this.studentID = studentID;
     }
 
-    public String getstudentName() {
+    public String getStudentName() {
         return studentName;
     }
 
-    public void setName(String studentName) {
+    public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
 
@@ -38,13 +39,12 @@ public class Student {
     }
 
 
-
     @Override
     public String toString() {
         return "Student{" +
                 "studentID='" + studentID + '\'' +
                 ", studentName='" + studentName + '\'' +
-                ", birthdate='" + birthdate + '\'' +
+                ", birthdate=" + birthdate +
                 '}';
     }
 }
