@@ -9,7 +9,7 @@ public class Course {
     private String courseName;
     private int numberOfCredits;
 
-    public Course() {
+    public Course(String courseID, String courseName, int numberOfCredits) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.numberOfCredits = numberOfCredits;

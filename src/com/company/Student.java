@@ -8,7 +8,7 @@ public class Student {
     private String studentName;
     private String birthdate;
 
-    public Student() {
+    public Student(String studentID, String studentName, String birthdate) {
         this.studentID = studentID;
         this.studentName = studentName;
         this.birthdate = birthdate;

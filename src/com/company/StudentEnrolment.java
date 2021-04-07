@@ -6,13 +6,12 @@ import java.util.Scanner;
 
 public class StudentEnrolment implements StudentEnrolmentManager{
 
-
     Scanner scanner = new Scanner(System.in);
     private ArrayList<Student> studentList;
     private ArrayList<Course> courseList;
     private String semester;
 
-    public StudentEnrolment(ArrayList<Student> studentList, ArrayList<Course> courseList, String semester) {
+    public StudentEnrolment() {
         this.studentList = studentList;
         this.courseList = courseList;
         this.semester = semester;
@@ -42,33 +41,41 @@ public class StudentEnrolment implements StudentEnrolmentManager{
         this.semester = semester;
     }
 
+    public void containStudent(Student s){
+        studentList.add(s);
+    }
+
+    public void containCourse(Course c){
+        courseList.add(c);
+    }
+
 
     @Override
-    public boolean enrollStudent() {
-        Student newStudent = new Student();
-        Course newCourse = new Course();
+    public void enrollStudent() {
         System.out.println("Enter the studentID: ");
         String studentID = scanner.nextLine();
-        for(int i = 0; i < studentList.size(); i++){
-            if(newStudent.getStudentID().equalsIgnoreCase(studentID)){
-                studentList.add(newStudent);
-                System.out.println("Enter the courseID: ");
-                String courseID = scanner.nextLine();
-                if(newCourse.getCourseID().equalsIgnoreCase(courseID)){
-                    courseList.add(newCourse);
-                    System.out.println("Enter the semester: ");
-                    String semester = scanner.nextLine();
-
+        for(Student s: studentList){
+            if(s.getStudentID().equalsIgnoreCase(studentID)){
+                ArrayList<Student> newStudentList = new ArrayList<Student>();
+                newStudentList.add(s);
+                System.out.println("Enter the courseName: ");
+                String courseName = scanner.nextLine();
+                for(Course c: courseList){
+                    if(c.getCourseID().equalsIgnoreCase(courseName)){
+                        ArrayList<Course> newCourseList = new ArrayList<Course>();
+                        newCourseList.add(c);
+                        System.out.println("Enter the semester: ");
+                        String semester = scanner.nextLine();
+                        StudentEnrolment studentEnrolment = new StudentEnrolment(newStudentList, newCourseList, semester);
+                    }
                 }
             }
         }
-
-        return false;
     }
 
     @Override
-    public boolean addCourse() {
-        return false;
+    public void addCourse() {
+
     }
 
     @Override
