@@ -65,16 +65,20 @@ public class StudentEnrolment implements StudentEnrolmentManager {
         this.courseList = courseList;
     }
 
+    //Add Student into StudentList
     public void addStudent(Student s) {
         studentList.add(s);
     }
 
+    //Add Course into CourseList
     public void addCourse(Course c) {
         courseList.add(c);
     }
 
 
-    @Override
+    //Ask the users about information of Student and Course.
+    //These information is stored as a studentEnrolment in the studentEnrolmentList
+    // After that, those information users enter will be stored in the "information.csv" as well
     public void enrollStudent() throws IOException {
         StringBuffer information = new StringBuffer();
         System.out.println("Enter the studentID: ");
@@ -103,6 +107,10 @@ public class StudentEnrolment implements StudentEnrolmentManager {
         printWriter.close();
     }
 
+    //Bring the addCourse() from the StudentEnrolmentManager interface
+    //addCourse function is to check whether student is already populated or not
+    //Then, if the student wants to add more courses in the same semester, this system would add more courses for student in same semester
+    //After that, these information also stored in "information.csv" file.
     @Override
     public void addCourse() throws IOException {
         StringBuffer information = new StringBuffer();
@@ -134,6 +142,9 @@ public class StudentEnrolment implements StudentEnrolmentManager {
         printWriter.close();
     }
 
+    //Method asks the user to put the information about the studentID.
+    //After that if it's corresponding with list in studentEnrolment,
+    //they will require courseID and semester more, then if it's all correct, it will be deleted
     @Override
     public void deleteCourse() {
         System.out.println("Enter the studentID: ");
@@ -158,6 +169,9 @@ public class StudentEnrolment implements StudentEnrolmentManager {
         }
     }
 
+    //Method asks users studendID, then if it matches with the existed information,
+    //they ask again about the information of course and check if the course which is typed is existed or not
+    //After that, the new information of Course will be updated
     @Override
     public void updateCourse() throws IOException {
         StringBuffer information = new StringBuffer();
@@ -194,6 +208,8 @@ public class StudentEnrolment implements StudentEnrolmentManager {
         printWriter.close();
     }
 
+    //Scan the studentID first, and then if the courseID and semester are also matched.
+    //then the information which users want to search will be printed.
     @Override
     public void getOne() {
         System.out.println("Enter the studentID: ");
@@ -216,6 +232,10 @@ public class StudentEnrolment implements StudentEnrolmentManager {
         }
     }
 
+    //There are three options given for users.
+    //Therefore, users can choose
+    //After that, if the information which users typed is matched with the information in the list,
+    //this method will show the all results regarding the function
     @Override
     public void getAll() {
         System.out.println("1.All courses for one student in 1 semester\n" +

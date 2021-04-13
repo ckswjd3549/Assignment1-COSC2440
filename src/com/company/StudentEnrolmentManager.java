@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public interface StudentEnrolmentManager{
 
-    public void enrollStudent() throws IOException;
     public void addCourse() throws IOException;
     public void deleteCourse();
     public void updateCourse() throws IOException;
